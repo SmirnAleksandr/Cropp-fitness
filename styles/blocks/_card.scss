@@ -1,0 +1,45 @@
+@use "../helpers" as *;
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: fluid(200, 50);
+
+    @include mobile {
+        flex-direction: column;
+        row-gap: rem(30);
+        padding-block: rem(20);
+    }
+
+    &__image {
+        margin-block: rem(-60);
+
+        @include laptop {
+            margin-block: rem(-30);
+            max-width: 30%;
+        }
+
+        @include tablet {
+            margin-block: 0;
+        }
+    }
+
+    &__info {
+
+        &-title {
+            margin-bottom: rem(13);
+        }
+
+        &-description {
+            max-width: rem(390);
+            margin-bottom: rem(37);
+        }
+    }
+
+    @include mobile-above {
+        &--reverse {
+            flex-direction: row-reverse;
+        }
+    }
+}

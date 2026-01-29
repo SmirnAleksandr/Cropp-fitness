@@ -1,0 +1,19 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+@use 'blocks/button';
+@use 'blocks/burger-button';
+@use 'blocks/header';
+@use 'blocks/hero';
+@use 'blocks/card';
+@use 'blocks/backdrop-title';
+@use 'blocks/motivation';
+@use 'blocks/training-types';
+@use 'blocks/input';
+@use 'blocks/join-us';
+@use 'blocks/location';
+@use 'blocks/calculator';
+@use 'blocks/footer';

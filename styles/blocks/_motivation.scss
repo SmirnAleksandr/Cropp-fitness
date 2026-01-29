@@ -1,0 +1,9 @@
+@use "../helpers" as *;
+
+.motivation {
+    &__item {
+        &:first-child {
+            background-color: var(--color-dark);
+        }
+    }
+}

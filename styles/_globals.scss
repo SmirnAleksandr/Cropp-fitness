@@ -1,0 +1,108 @@
+@use 'helpers' as *;
+
+html {
+    &.is-lock {
+        overflow: hidden;
+    }
+}
+
+body {
+    @include fluid-text(16, 14);
+
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-base);
+    font-weight: 300;
+    line-height: 1.75;
+    letter-spacing: 0.05em;
+    color: var(--color-gray);
+    background-color: var(--color-dark-accent);
+}
+
+main {
+    flex-grow: 1;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    color: var(--color-light);
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h1, .h1 {
+    @include fluid-text(360, 50);
+}
+
+h2, .h2 {
+    @include fluid-text(60, 20);
+}
+
+h3, .h3 {
+    @include fluid-text(40, 20);
+}
+
+h4, .h4 {
+    @include fluid-text(30, 16);
+}
+
+h5, .h5 {
+    @include fluid-text(16, 14);
+}
+
+h6, .h6 {
+    font-size: rem(14);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+option {
+    background-color: var(--color-dark-accent);
+}
+
+a,
+button {
+    color: inherit;
+
+    @include hover {
+        opacity: 0.5;
+    }
+
+    &[class] {
+        text-decoration: none;
+    }
+}
+
+:focus-visible {
+    outline: rem(2) dashed var(--color-light);
+    outline-offset: rem(4);
+    transition-duration: 0s !important;
+}
+
+// расширяет кликабельную зону маленьких кнопок и ссылок имеющих атрибут aria-label
+a,
+button {
+    &[aria-label] {
+        position: relative;
+
+        &::before {
+            @include abs-center;
+            @include square(rem(44));
+
+            content: '';
+        }
+    }
+}

@@ -1,0 +1,117 @@
+@use "../helpers" as *;
+
+.join-us {
+    &__video {
+        background: url('../../images/join-us/bg.jpg') center center/cover no-repeat;
+
+        &-wrapper{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            padding-block: fluid(150, 50);
+        }
+
+        &-image {
+            max-width: fluid(960, 160);
+        }
+
+        &-link {
+            @include abs-center;
+            @include square(rem(200));
+
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: rem(4);
+            border: var(--border);
+            border-radius: 50%;
+
+            @include tablet {
+                @include square(rem(100));
+            }
+
+            @include mobile {
+                @include square(rem(80));
+            }
+
+            &::after {
+                content: '';
+                
+                width: rem(26);
+                aspect-ratio: 1;
+                background: url('../../icons/arrow-top-right.svg') center/contain no-repeat;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-title {
+            @include fluid-text(180, 30);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: rem(24);
+            margin-top: rem(-100);
+
+            @include laptop {
+                margin-top: rem(-60);
+            }
+
+            @include tablet {
+                margin-top: rem(-20);
+            }
+
+            &::after {
+                content: '';
+                
+                width: fluid(127, 20);
+                aspect-ratio: 1;
+                background: url('../../icons/arrow-top-right-white.svg') center/contain no-repeat;
+            }
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: rem(8);
+            padding-top: fluid(80, 30);
+        }
+
+        &-description {
+            @include fluid-text(20, 14);
+            text-transform: uppercase;
+            color: var(--color-light);
+            padding-inline: rem(15);
+            padding-bottom: rem(52);
+        }
+
+        &-form {
+            display: flex;
+            column-gap: rem(20);
+            margin-bottom: fluid(150, 50);
+
+            @include tablet {
+                flex-direction: column;
+                row-gap: rem(20);
+            }
+        }
+
+        &-button {
+            background-color: transparent;
+        }
+
+        &-input {
+            min-width: rem(400);
+
+            @include laptop {
+                min-width: rem(300);
+            }
+        }
+    }
+}

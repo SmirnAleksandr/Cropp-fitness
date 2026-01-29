@@ -1,0 +1,33 @@
+@use "../helpers" as *;
+
+.location {
+    background-color: var(--color-dark);
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+
+        @include tablet {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-block: rem(15);
+
+        &-title {
+            padding-bottom: rem(20);
+        }
+
+        &-description {
+            max-width: rem(490);
+            padding-bottom: rem(37);
+            text-align: center;
+        }
+    }
+}

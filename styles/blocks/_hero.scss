@@ -1,0 +1,33 @@
+@use "../helpers" as *;
+
+.hero {
+    &__inner {
+        min-height: calc(100vh - var(--header-height));
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding-left: rem(20);
+        padding-bottom: rem(100);
+
+        @include tablet {
+            padding-bottom: rem(50);
+        }
+    }
+
+    &__description {
+        display: flex;
+        align-items: end;
+
+        &::before {
+            content: '';
+
+            width: clamp(60px, 10.1vw, 194px);
+            aspect-ratio: 1;
+            margin-right: rem(30);
+            background: url('../../icons/arrow-bottom-right-white.svg') center/contain no-repeat;
+        }
+        
+    }
+
+
+}

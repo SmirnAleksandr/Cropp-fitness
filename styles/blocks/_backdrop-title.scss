@@ -1,0 +1,22 @@
+@use "../helpers" as *;
+
+.backdrop-title {
+    position: relative;
+    z-index: 2;
+
+    &::before {
+        content: '';
+
+        display: block;
+        position: absolute;
+        right: calc(100% + rem(8));
+
+        @include square(rem(26));
+
+        @include mobile {
+            @include square(rem(16));
+        }
+
+        background: url(../../icons/plus.svg) center/contain no-repeat;
+    }
+}

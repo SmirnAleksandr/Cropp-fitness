@@ -1,0 +1,66 @@
+@use "../helpers" as *;
+
+.training-types {
+    position: relative;
+    padding-top: fluid(152, 60);
+    padding-bottom: fluid(140, 50);
+    background-color: var(--color-dark);
+    z-index: 10;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: rem(60);
+
+        @include laptop {
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: rem(80);
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &::before {
+            position: absolute;
+
+            content: '';
+
+            @include square(rem(82));
+            
+            background: url('../../icons/arrow-bottom-left.svg') center/contain no-repeat;
+            margin-top: rem(-82);
+            margin-left: rem(150);
+
+            @include laptop {
+                @include square(rem(50));
+                margin-top: rem(-50);
+                margin-left: rem(150);
+            }
+
+            @include mobile {
+                @include square(rem(40));
+                margin-top: rem(-40);
+                margin-left: rem(130);
+            }
+        }
+    }
+
+    &__image {
+        width: rem(150);
+        height: rem(140);
+        padding-bottom: rem(33);
+
+        @include mobile {
+            width: rem(100);
+            height: rem(100);
+        }
+    }
+}
